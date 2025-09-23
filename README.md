@@ -1,11 +1,16 @@
-# Poetry Device Library Testing
+# poetry-adv-fun-test
 
-[![Tests](https://github.com/saileshmishraindia/poetry-device-lib-testing/actions/workflows/tests.yml/badge.svg)](https://github.com/saileshmishraindia/poetry-device-lib-testing/actions/workflows/tests.yml)
-[![Coverage Status](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg)](https://github.com/saileshmishraindia/poetry-device-lib-testing)
+[![PyPI version](https://img.shields.io/pypi/v/poetry-adv-fun-test.svg)](https://pypi.org/project/poetry-adv-fun-test/)
+[![CI](https://github.com/saileshmishraindia/poetry-device-lib-testing/actions/workflows/tests.yml/badge.svg)](https://github.com/saileshmishraindia/poetry-device-lib-testing/actions/workflows/tests.yml)
+[![Coverage Status](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/saileshmishraindia/coverage-badge.json)](https://github.com/saileshmishraindia/poetry-device-lib-testing/actions)
 
-A collection of **active and passive device models** (Resistor, Capacitor, Inductor, Diode, BJT, MOSFET, JFET, OpAmp) with **pytest-based unit tests** and GitHub Actions CI for automated testing + coverage.
+📦 A Python library for modeling **active** and **passive electronic devices** with full test coverage and CI/CD setup.  
 
- 
+---
 
+## 📥 Installation
 
+From **PyPI**:
 
+```bash
+pip install poetry-adv-fun-test
