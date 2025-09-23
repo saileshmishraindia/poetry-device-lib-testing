@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15   # ⬅️ prevent random cancellation
+    timeout-minutes: 15   # prevent random cancellation
 
     strategy:
       matrix:
@@ -32,8 +32,21 @@ jobs:
       - name: Configure Poetry
         run: poetry config virtualenvs.create true
 
-      - name: Install dependencies
-        run: poetry install --no-interaction --no-root   # ⬅️ faster + CI-friendly
+      - name: Cache Poetry
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pypoetry
+            ~/.cache/pip
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-poetry-
+
+      - name: Install project and dependencies
+        run: poetry install --no-interaction --with dev
+
+      - name: Verify package installation
+        run: poetry run python -c "import poetry_adv_fun_test; print('Version:', poetry_adv_fun_test.__version__)"
 
       - name: Run tests with coverage
         run: poetry run pytest --cov=poetry_adv_fun_test --cov-report=xml --cov-report=term-missing
@@ -49,7 +62,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.event_name == 'release'
-    timeout-minutes: 10   # ⬅️ add safety timeout
+    timeout-minutes: 10   # add safety timeout
 
     steps:
       - name: Checkout code
