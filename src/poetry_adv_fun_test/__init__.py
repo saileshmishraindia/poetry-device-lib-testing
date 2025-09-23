@@ -11,4 +11,7 @@ except ImportError:  # For Python < 3.8
 try:
     __version__ = version("poetry-adv-fun-test")
 except PackageNotFoundError:
-    __version__ = "unknown"
+    __version__ = "0.1.4"  # fallback if metadata is missing
+
+from .active import Diode, BJT, MOSFET, JFET, OpAmp
+from .passive import Resistor, Capacitor, Inductor
