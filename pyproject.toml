@@ -1,9 +1,13 @@
 [tool.poetry]
 name = "poetry-adv-fun-test"
 version = "0.1.0"
-description = ""
+description = "A Python library for modeling active and passive electronic components with test coverage."
 authors = ["Sailesh Mishra <saileshmishra164@gmail.com>"]
 readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/saileshmishraindia/poetry-device-lib-testing"
+repository = "https://github.com/saileshmishraindia/poetry-device-lib-testing"
+keywords = ["electronics", "devices", "poetry", "pytest", "circuit", "components"]
 packages = [{ include = "poetry_adv_fun_test", from = "src" }]
 
 [tool.poetry.dependencies]
