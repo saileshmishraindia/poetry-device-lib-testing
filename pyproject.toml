@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetry-adv-fun-test"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Python library for modeling active and passive electronic components with test coverage."
 authors = ["Sailesh Mishra <saileshmishra164@gmail.com>"]
 readme = "README.md"
